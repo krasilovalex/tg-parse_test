@@ -2,3 +2,4 @@
 venv/
 .idea/
 users.db
+.env
