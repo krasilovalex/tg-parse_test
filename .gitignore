@@ -3,3 +3,4 @@ venv/
 .idea/
 users.db
 .env
+anon.session
