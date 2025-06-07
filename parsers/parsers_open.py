@@ -7,8 +7,6 @@ def parse_open_subs(group_link, client, bd):
     Парсит участников открытой группы.
     Добавляет их в базу данных.
     """
-    bd = BaseData()
-    bd.create_bd_if_not_exists()
     logging.info(f"Подключено как: {client.get_me().username}")
 
     

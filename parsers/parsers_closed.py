@@ -29,8 +29,6 @@ def parse_subs_closed(client,commenters, linked_chat, bd, message_limit=200, ):
     Парсит участников привязанного чата (комментаторов) к каналу.
     Добавляет их в базу данных.
     """
-    bd = BaseData()
-    bd.create_bd_if_not_exists()
     try:
         # Используем iter_messages для гибкости
         for msg in client.iter_messages(linked_chat, limit=message_limit):
