@@ -7,8 +7,6 @@ def parse_open_subs(client, group_link, bd):
     Парсит участников открытой группы.
     Добавляет их в базу данных.
     """
-
-    
     group = client.get_entity(group_link)
     participants = client.get_participants(group, aggressive=True)
     logging.info(f"Найдено {len(participants)} участников в {group_link}")
