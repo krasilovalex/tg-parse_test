@@ -12,11 +12,12 @@ async def get_telethon_client(
     api_id: int,
     api_hash: str,
     phone_number: str,
-    device_model: str,
-    system_version: str,
-    session_name: str = 'sessions/session_user.session'
+    session_name: str = 'session_user.session'
 ):
     global _client
+
+    device_model = "Windows PC"
+    system_version = "10.0"
 
     if _client is not None:
         if _client.is_connected:
