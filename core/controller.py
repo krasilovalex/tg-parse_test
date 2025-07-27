@@ -72,8 +72,8 @@ async def parse_open_subs_async(client, group_link, bd) -> int:
     count = 0
     for user in participants:
         if user.bot or not user.username:
-            logging.debug(f"Пропущен : {user.id}")
-            continue
+            username =  user.username or ''
+            bd.add_in_db(user_id, username, access_hash)
         
         user_id = str(user.id)
         access_hash = str(user.access_hash)
@@ -88,7 +88,7 @@ async def parse_open_subs_async(client, group_link, bd) -> int:
 
     return count
 
-async def parse_closed_subs_async(client, group_link, bd, message_limit=200) -> int:
+async def parse_closed_subs_async(client, group_link, bd, message_limit=1000) -> int:
     """
     Асинхронная версия парсинга по комментам (закрытый чат).
     """
